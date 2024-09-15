@@ -8,7 +8,7 @@ import { Footer } from './Footer'
 
 function App() {
 
-   document.title = 'ccf'
+   document.title = 'Find A Medical Expert'
 
    return (
       <div className="App" >

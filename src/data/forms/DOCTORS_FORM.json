@@ -1,0 +1,82 @@
+[
+   {
+      "name": "Firstname",
+      "internal_name": "firstname",
+      "element": "input",
+      "type": "text",
+      "required": true
+   },
+   {
+      "name": "Lastname",
+      "internal_name": "lastname",
+      "element": "input",
+      "type": "text",
+      "required": true
+   },
+   {
+      "name": "title",
+      "internal_name": "title",
+      "element": "select",
+      "options": [
+         {
+            "id": 1,
+            "option_display": "DO",
+            "option_value": "DO"
+         },
+         {
+            "id": 2,
+            "option_display": "MD",
+            "option_value": "MD"
+         }
+      ],
+      "required": true
+   },
+   {
+      "name": "Specialization",
+      "internal_name": "specialization",
+      "element": "select",
+      "options": [
+         {
+            "id": 1,
+            "option_display": "Primary Care Doctor",
+            "option_value": "Primary Care Doctor"
+         },
+         {
+            "id": 2,
+            "option_display": "Internist",
+            "option_value": "Internist"
+         },
+         {
+            "id": 3,
+            "option_display": "Surgeon",
+            "option_value": "Surgeon"
+         }
+      ],
+      "required": true
+   },
+   {
+      "name": "Specialty",
+      "internal_name": "specialty",
+      "element": "select",
+      "options": [
+         {
+            "id": 1,
+            "option_display": "GI Oncology",
+            "option_value": "GI Oncology"
+         },
+         {
+            "id": 2,
+            "option_display": "Colorectal Surgery",
+            "option_value": "Colorectal Surgery"
+         }
+      ],
+      "required": true
+   },
+   {
+      "name": "Services",
+      "internal_name": "services",
+      "element": "input",
+      "type": "text",
+      "required": true
+   }
+]

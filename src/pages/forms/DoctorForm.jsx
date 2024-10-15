@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Input, Inputs } from '../../cmps';
+import { DOCTORS_FORM } from '../../data';
+import { useForm } from '../../hooks';
+import { objects } from '../../functions';
 
 export const DoctorForm = () => {
-   const [formData, setFormData] = useState({
-      firstname: '',
-      lastname: '',
-      datetime: '',
-      barber: '',
-      service: '',
-   });
 
-   const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-      console.log(typeof e.target.value);
-   };
+   const { values, handleChange, changedValues, isValuesChanged, restart } = useForm(objects.emptyFormFields(DOCTORS_FORM, 'internal_name'))
 
    const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-         const res = await axios.post('http://localhost:5000/api/appointments', formData);
+         const res = await axios.post('https://cff-fame-backend.onrender.com/api/doctors', values);
          console.log('Appointment booked:', res.data);
       } catch (err) {
          console.error(err);
@@ -26,14 +20,26 @@ export const DoctorForm = () => {
    };
 
    return (
-      <form className='form' onSubmit={handleSubmit}>
-         <input name="firstname" placeholder="First Name" onChange={handleChange} />
-         <input name="lastname" placeholder="last Name" onChange={handleChange} />
-         <input name="datetime" type="datetime-local" onChange={handleChange} />
-         <input name="barber" placeholder="Barber" onChange={handleChange} />
-         <input name="service" placeholder="Service" onChange={handleChange} />
-         <button type="submit">Book Appointment</button>
-      </form>
+      <main className='page'>
+         <form className='form' onSubmit={handleSubmit}>
+            <h1>Form</h1>
+            <div className="fields">
+            {
+               DOCTORS_FORM.map(field =>
+                  <Inputs
+                     key={field.internal_name}
+                     value={values[field.internal_name]}
+                     field={field}
+                     handleChange={handleChange}
+                  />
+               )
+            }
+            </div>
+
+            <button className='btn' type="submit">Submit</button>
+         </form>
+      </main>
+
    );
 };
 

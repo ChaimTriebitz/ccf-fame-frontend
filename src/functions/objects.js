@@ -2,7 +2,8 @@ export const objects = {
    isEmpty,
    getChangedProperties,
    filterFields,
-   getDeepValue
+   getDeepValue,
+   emptyFormFields,
 }
 
 function isEmpty(obj) {
@@ -72,7 +73,7 @@ function getChangedProperties(prev, changed) {
 }
 
 function filterFields(originalObject, keysToInclude = []) {
-   
+
    const filteredObject = {}
 
    keysToInclude.forEach(key => {
@@ -81,6 +82,10 @@ function filterFields(originalObject, keysToInclude = []) {
    })
 
    return filteredObject
+}
+
+function emptyFormFields(form, key) {
+   return filterFields({}, form.map(field => field[key]))
 }
 
 function getDeepValue(data, path) {

@@ -1,6 +1,5 @@
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { Main } from './Main';
 import { Msg } from './Msg';
 // FORMS
 import { Inputs } from './forms/Inputs';
@@ -11,7 +10,6 @@ export {
    Inputs,
    Footer,
    Header,
-   Main,
    Msg,
    Input,
    Select

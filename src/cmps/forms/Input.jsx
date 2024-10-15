@@ -1,8 +1,4 @@
-export const Input = ({
-   field = {},
-   value,
-   handleChange = () => { },
-}) => {
+export const Input = ({ field = {}, value, handleChange = () => { }, }) => {
 
    const { internal_name, type, name, required = false } = field
 

@@ -35,7 +35,6 @@ export const DoctorForm = () => {
                )
             }
             </div>
-
             <button className='btn' type="submit">Submit</button>
          </form>
       </main>

@@ -6,7 +6,8 @@ const links = [
    { name: 'About', link: '/about' },
    { name: 'Resources', link: '/resources' },
    { name: 'News', link: '/news' },
-   { name: 'Impact', link: '/impact' }
+   { name: 'Impact', link: '/impact' },
+   { name: 'Doctor', link: '/doctor-form' },
 ]
 
 export const Header = () => {
